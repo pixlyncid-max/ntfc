@@ -1,0 +1,496 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* ============================================================
+   NTFC Design System — Swiss Design / International Typographic Style
+   Primary Accent: #048CD6 (Electric Blue)
+   ============================================================ */
+
+@theme {
+    /* Fonts */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'Courier Prime', 'Courier New', monospace;
+
+    /* Color Tokens */
+    --color-background:               #131313;
+    --color-surface:                  #131313;
+    --color-surface-dim:              #131313;
+    --color-surface-bright:           #393939;
+    --color-surface-container-lowest: #0e0e0e;
+    --color-surface-container-low:    #1c1b1b;
+    --color-surface-container:        #20201f;
+    --color-surface-container-high:   #2a2a2a;
+    --color-surface-container-highest:#353535;
+    --color-surface-variant:          #353535;
+    --color-on-surface:               #e5e2e1;
+    --color-on-surface-variant:       #cfc4c5;
+    --color-on-background:            #e5e2e1;
+    --color-primary:                  #c6c6c6;
+    --color-on-primary:               #303030;
+    --color-primary-container:        #000000;
+    --color-on-primary-container:     #757575;
+    --color-primary-fixed:            #e2e2e2;
+    --color-primary-fixed-dim:        #c6c6c6;
+    --color-on-primary-fixed:         #1b1b1b;
+    --color-on-primary-fixed-variant: #474747;
+    --color-inverse-primary:          #5e5e5e;
+    --color-secondary:                #c6c6c7;
+    --color-on-secondary:             #2f3131;
+    --color-secondary-container:      #454747;
+    --color-on-secondary-container:   #b4b5b5;
+    --color-secondary-fixed:          #e2e2e2;
+    --color-secondary-fixed-dim:      #c6c6c7;
+    --color-on-secondary-fixed:       #1a1c1c;
+    --color-on-secondary-fixed-variant:#454747;
+    --color-tertiary:                 #95ccff;
+    --color-on-tertiary:              #003352;
+    --color-tertiary-container:       #000000;
+    --color-on-tertiary-container:    #007bbd;
+    --color-tertiary-fixed:           #cde5ff;
+    --color-tertiary-fixed-dim:       #95ccff;
+    --color-on-tertiary-fixed:        #001d32;
+    --color-on-tertiary-fixed-variant:#004a75;
+    --color-error:                    #ffb4ab;
+    --color-on-error:                 #690005;
+    --color-error-container:          #93000a;
+    --color-on-error-container:       #ffdad6;
+    --color-outline:                  #988e90;
+    --color-outline-variant:          #4c4546;
+    --color-inverse-surface:          #e5e2e1;
+    --color-inverse-on-surface:       #313030;
+    --color-surface-tint:             #c6c6c6;
+    --color-electric-blue:            #048CD6;
+
+    /* Spacing */
+    --spacing-unit:           8px;
+    --spacing-gutter:         24px;
+    --spacing-margin-mobile:  20px;
+    --spacing-margin-desktop: 64px;
+
+    /* Border Radius — Sharp by design */
+    --radius: 0px;
+    --radius-lg: 0px;
+    --radius-xl: 0px;
+    --radius-full: 9999px;
+}
+
+/* ============================================================
+   Base Styles
+   ============================================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background-color: #048CD6;
+    color: #ffffff;
+}
+
+/* ============================================================
+   Swiss Grid Layout
+   ============================================================ */
+.page-padding {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+@media (min-width: 768px) {
+    .page-padding {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .page-padding {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .page-padding {
+        padding-left: 160px;
+        padding-right: 160px;
+    }
+}
+
+.swiss-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-gutter);
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+@media (min-width: 768px) {
+    .swiss-grid {
+        grid-template-columns: repeat(12, 1fr);
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .swiss-grid {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .swiss-grid {
+        padding-left: 160px;
+        padding-right: 160px;
+    }
+}
+
+/* ============================================================
+   Dividers — Thin, structural, 0.5px
+   ============================================================ */
+.divider {
+    border-top: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+.divider-b {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+.divider-r {
+    border-right: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+.thin-divider {
+    border-top: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================================
+   Typography Scale
+   ============================================================ */
+.text-display {
+    font-size: 80px;
+    line-height: 88px;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+    font-family: var(--font-sans);
+}
+
+.text-headline-lg {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    font-family: var(--font-sans);
+}
+
+.text-headline-lg-mobile {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    font-family: var(--font-sans);
+}
+
+.text-headline-md {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+    font-family: var(--font-sans);
+}
+
+.text-body-lg {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0em;
+    font-weight: 400;
+    font-family: var(--font-sans);
+}
+
+.text-body-md {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0em;
+    font-weight: 400;
+    font-family: var(--font-sans);
+}
+
+.text-label-sm {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    font-family: var(--font-sans);
+}
+
+.text-mono {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    font-weight: 400;
+    font-family: var(--font-mono);
+}
+
+/* Responsive display */
+@media (min-width: 768px) {
+    .md\:text-display {
+        font-size: 80px;
+        line-height: 88px;
+        letter-spacing: -0.04em;
+        font-weight: 700;
+    }
+    .md\:text-headline-lg {
+        font-size: 48px;
+        line-height: 56px;
+    }
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn-primary {
+    background-color: #048CD6;
+    color: #ffffff;
+    border-radius: 0px;
+    transition: background-color 0.3s, transform 0.2s ease-out;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #059ded;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 0px;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* ============================================================
+   Animations & Motion Presets
+   ============================================================ */
+.animate-on-scroll,
+.reveal,
+.reveal-up {
+    opacity: 0;
+    transform: translateY(32px) scale(0.98);
+    filter: blur(4px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+.animate-on-scroll.is-visible,
+.reveal.active,
+.reveal-up.is-visible,
+.reveal-up.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+.stagger-1 { transition-delay: 100ms; }
+.stagger-2 { transition-delay: 200ms; }
+.stagger-3 { transition-delay: 300ms; }
+.delay-100  { transition-delay: 100ms; }
+.delay-200  { transition-delay: 200ms; }
+.delay-300  { transition-delay: 300ms; }
+.delay-400  { transition-delay: 400ms; }
+
+/* Spotlight Cursor Ambient Glow */
+.spotlight-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(4, 140, 214, 0.08) 0%, rgba(4, 140, 214, 0.02) 45%, transparent 70%);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.5s ease;
+    border-radius: 50%;
+}
+
+/* Floating animation for subtle background elements */
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+.animate-float {
+    animation: floatSlow 8s ease-in-out infinite;
+}
+
+/* Pulse glow for highlights */
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 15px rgba(4, 140, 214, 0.2); }
+    50% { box-shadow: 0 0 30px rgba(4, 140, 214, 0.5); }
+}
+
+.glow-on-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-on-hover:hover {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* ============================================================
+   Background Patterns
+   ============================================================ */
+.bg-grid-pattern {
+    background-image:
+        linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center top;
+}
+
+.bg-grid-lg {
+    background-image:
+        linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+}
+
+/* ============================================================
+   Navigation
+   ============================================================ */
+.nav-scrolled {
+    background-color: rgba(19, 19, 19, 0.85) !important;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ============================================================
+   Service / Feature Cards
+   ============================================================ */
+.service-card {
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.4);
+}
+
+/* ============================================================
+   Electric Blue utility
+   ============================================================ */
+.electric-blue { color: #048CD6; }
+.bg-electric-blue { background-color: #048CD6; }
+.border-electric-blue { border-color: #048CD6; }
+.text-electric-blue { color: #048CD6; }
+
+/* ============================================================
+   Mobile Menu
+   ============================================================ */
+#mobile-menu {
+    transition: max-height 0.4s cubic-bezier(0.2, 1, 0.2, 1),
+                opacity 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+#mobile-menu.open {
+    max-height: 400px;
+    opacity: 1;
+}
+
+/* ============================================================
+   Blog & Article Styles
+   ============================================================ */
+.article-card {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+}
+
+.article-img-wrap {
+    overflow: hidden;
+}
+
+.article-img-wrap img {
+    transition: transform 0.6s ease;
+}
+
+.article-img-wrap:hover img {
+    transform: scale(1.04);
+}
+
+/* ============================================================
+   Portfolio Cards
+   ============================================================ */
+.portfolio-card {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card:hover {
+    background-color: #1c1b1b;
+    transform: translateY(-2px);
+}
+
+.portfolio-card .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(4, 140, 214, 0.15), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-card:hover .card-overlay {
+    opacity: 1;
+}
+
+/* ============================================================
+   Leadership / Profile Cards
+   ============================================================ */
+.profile-card {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+}
+
+.profile-card img {
+    transition: transform 0.7s ease, filter 0.7s ease;
+    filter: grayscale(100%);
+}
+
+.profile-card:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
