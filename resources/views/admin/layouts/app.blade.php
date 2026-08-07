@@ -15,7 +15,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @if(file_exists(public_path('build/manifest.json')))
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @else
+        <link rel="stylesheet" href="{{ asset('build/assets/app-CWll_BVS.css') }}">
+        <script src="{{ asset('build/assets/app-D3s2Cjru.js') }}" defer></script>
+    @endif
+    <link rel="stylesheet" href="{{ asset('build/assets/app-CWll_BVS.css') }}">
 
     <style>
         body { background-color: #0e0e0e; color: #e5e2e1; font-family: 'Inter', sans-serif; }
