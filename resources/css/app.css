@@ -79,10 +79,12 @@
 }
 
 /* ============================================================
-   Base Styles
+   Base Styles & Responsive Viewport Fixes
    ============================================================ */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -91,6 +93,13 @@ body {
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
 }
 
 ::selection {
@@ -99,14 +108,21 @@ body {
 }
 
 /* ============================================================
-   Swiss Grid Layout
+   Swiss Grid Layout & Fluid Page Padding
    ============================================================ */
 .page-padding {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
+    .page-padding {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+}
+
+@media (min-width: 1024px) {
     .page-padding {
         padding-left: 80px;
         padding-right: 80px;
@@ -117,13 +133,6 @@ body {
     .page-padding {
         padding-left: 120px;
         padding-right: 120px;
-    }
-}
-
-@media (min-width: 1600px) {
-    .page-padding {
-        padding-left: 160px;
-        padding-right: 160px;
     }
 }
 

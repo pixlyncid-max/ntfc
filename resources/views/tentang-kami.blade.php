@@ -10,22 +10,22 @@
      ============================================================ -->
 <section style="padding-top: 72px; padding-bottom: 80px; border-bottom: 0.5px solid rgba(76,69,70,0.3); background-color: #131313; position: relative; overflow: hidden;" class="bg-grid-lg page-padding">
     <div style="width: 100%;">
-        <!-- 2-column hero: text left, image right -->
-        <div style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0, 360px); gap: 64px; align-items: flex-start;">
+        <!-- 2-column hero: text left, video right -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
 
-            <!-- Left: Headline + Text -->
-            <div class="reveal" style="display: flex; flex-direction: column; justify-content: flex-start; z-index: 10; position: relative; padding-top: 8px;">
-                <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(36px, 4.5vw, 68px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 700; color: #e5e2e1; margin-bottom: 20px;">
+            <!-- Left: Headline + Text (7 Cols) -->
+            <div class="reveal lg:col-span-7 flex flex-col justify-start z-10 relative" style="padding-top: 8px;">
+                <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(32px, 5vw, 68px); line-height: 1.05; letter-spacing: -0.04em; font-weight: 700; color: #e5e2e1; margin-bottom: 20px;">
                     {{ $settings['about_hero_title'] ?? 'Presisi Dalam Praktik.' }}
                 </h1>
-                <p style="font-family: 'Inter', sans-serif; font-size: 15px; line-height: 25px; color: #cfc4c5; max-width: 420px;">
+                <p style="font-family: 'Inter', sans-serif; font-size: 15px; line-height: 25px; color: #cfc4c5; max-width: 540px;">
                     {{ $settings['about_hero_subtext'] ?? 'Nusantara Tax, Finance, and Consulting merupakan persimpangan antara metodologi analitis yang ketat dan ketajaman strategis. Kami menghadirkan kejelasan dalam lanskap keuangan yang kompleks.' }}
                 </p>
             </div>
 
-            <!-- Right: Video Panel -->
-            <div class="reveal" style="transition-delay: 200ms; position: relative; z-index: 10; flex-shrink: 0;">
-                <div style="width: 100%; aspect-ratio: 3/4; border: 1px solid rgba(76,69,70,0.3); overflow: hidden; position: relative; background-color: #20201f;">
+            <!-- Right: Video Panel (5 Cols) -->
+            <div class="reveal lg:col-span-5 w-full z-10 relative" style="transition-delay: 200ms;">
+                <div style="width: 100%; aspect-ratio: 16/9; max-height: 480px; border: 1px solid rgba(76,69,70,0.3); overflow: hidden; position: relative; background-color: #20201f;" class="lg:aspect-[3/4]">
                     <video
                         autoplay
                         loop
