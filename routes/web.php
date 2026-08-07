@@ -35,6 +35,10 @@ Route::get('/blog/{slug}', [BlogFrontController::class, 'show'])->name('blog.sho
 | Admin Authentication Routes
 |--------------------------------------------------------------------------
 */
+Route::get('/login', function() {
+    return redirect()->route('admin.login');
+})->name('login');
+
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
