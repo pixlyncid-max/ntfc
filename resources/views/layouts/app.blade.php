@@ -33,8 +33,8 @@
     <!-- Structured Data JSON-LD (Schema.org for Google Rich Snippets) -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "AccountingService",
+      "@@context": "https://schema.org",
+      "@@type": "AccountingService",
       "name": "Nusantara Tax, Finance, and Consulting (NTFC)",
       "url": "https://ntfconsulting.id",
       "logo": "https://ntfconsulting.id/images/logo%20biru.png",
@@ -43,7 +43,7 @@
       "telephone": "{{ $siteSettings['site_phone'] ?? '+62 811-3058-8884' }}",
       "email": "{{ $siteSettings['site_email'] ?? 'contact@ntfconsulting.id' }}",
       "address": {
-        "@type": "PostalAddress",
+        "@@type": "PostalAddress",
         "addressCountry": "ID"
       },
       "priceRange": "$$",
@@ -54,12 +54,12 @@
     </script>
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
+      "@@context": "https://schema.org",
+      "@@type": "WebSite",
       "name": "NTFC Consulting",
       "url": "https://ntfconsulting.id",
       "potentialAction": {
-        "@type": "SearchAction",
+        "@@type": "SearchAction",
         "target": "https://ntfconsulting.id/blog?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
