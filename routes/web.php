@@ -16,11 +16,14 @@ use App\Http\Controllers\Admin\LayananController as AdminLayananController;
 use App\Http\Controllers\Admin\PortofolioController as AdminPortofolioController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 
+use App\Http\Controllers\SitemapController;
+
 /*
 |--------------------------------------------------------------------------
 | Public Routes
 |--------------------------------------------------------------------------
 */
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('/', [HomeController::class, 'index'])->name('beranda');
 Route::get('/tentang-kami', [TentangKamiController::class, 'index'])->name('tentang-kami');
 Route::get('/layanan', [LayananController::class, 'index'])->name('layanan');

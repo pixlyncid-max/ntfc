@@ -3,7 +3,68 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="xW36bMBKAUPQwJgDmyxkFUg07pzkgy8R47lkBobjEwc" />
+
+    <!-- SEO Meta Tags -->
     <title>@yield('title', 'NTFC') | Nusantara Tax, Finance, and Consulting</title>
+    <meta name="description" content="@yield('meta_description', 'Nusantara Tax, Finance, and Consulting (NTFC) - Mitrall Strategis Layanan Konsultasi Perpajakan, Manajemen Keuangan, Akuntansi, dan Audit Terpercaya di Indonesia.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'konsultan pajak, konsultan keuangan, jasa akuntansi, audit keuangan, tax consultant indonesia, NTFC, Nusantara Tax Finance Consulting, laporan keuangan, tax planning')">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="NTFC - Nusantara Tax, Finance, and Consulting">
+    <link rel="canonical" href="{{ url()->current() }}" />
+
+    <!-- Open Graph / Facebook / WhatsApp SEO -->
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:title" content="@yield('title', 'NTFC') | Nusantara Tax, Finance, and Consulting">
+    <meta property="og:description" content="@yield('meta_description', 'Nusantara Tax, Finance, and Consulting (NTFC) - Mitrall Strategis Layanan Konsultasi Perpajakan, Manajemen Keuangan, Akuntansi, dan Audit Terpercaya di Indonesia.')">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:site_name" content="NTFC - Nusantara Tax, Finance, and Consulting">
+    <meta property="og:image" content="@yield('og_image', asset('images/logo biru.png'))">
+
+    <!-- Twitter Card SEO -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', 'NTFC') | Nusantara Tax, Finance, and Consulting">
+    <meta name="twitter:description" content="@yield('meta_description', 'Nusantara Tax, Finance, and Consulting (NTFC) - Mitrall Strategis Layanan Konsultasi Perpajakan, Manajemen Keuangan, Akuntansi, dan Audit Terpercaya di Indonesia.')">
+    <meta name="twitter:image" content="@yield('og_image', asset('images/logo biru.png'))">
+
+    <!-- Structured Data JSON-LD (Schema.org for Google Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "Nusantara Tax, Finance, and Consulting (NTFC)",
+      "url": "https://ntfconsulting.id",
+      "logo": "https://ntfconsulting.id/images/logo%20biru.png",
+      "image": "https://ntfconsulting.id/images/logo%20biru.png",
+      "description": "Layanan konsultasi perpajakan, manajemen keuangan, akuntansi, dan audit bisnis terpercaya di Indonesia.",
+      "telephone": "{{ $siteSettings['site_phone'] ?? '+62 811-3058-8884' }}",
+      "email": "{{ $siteSettings['site_email'] ?? 'contact@ntfconsulting.id' }}",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ID"
+      },
+      "priceRange": "$$",
+      "sameAs": [
+        "https://ntfconsulting.id"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "NTFC Consulting",
+      "url": "https://ntfconsulting.id",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ntfconsulting.id/blog?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ $siteSettings['site_favicon'] ?? asset('images/icon.png') }}">
