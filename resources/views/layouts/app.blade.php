@@ -22,13 +22,13 @@
     <meta property="og:description" content="@yield('meta_description', 'Nusantara Tax, Finance, and Consulting (NTFC) - Mitrall Strategis Layanan Konsultasi Perpajakan, Manajemen Keuangan, Akuntansi, dan Audit Terpercaya di Indonesia.')">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:site_name" content="NTFC - Nusantara Tax, Finance, and Consulting">
-    <meta property="og:image" content="@yield('og_image', asset('images/logo biru.png'))">
+    <meta property="og:image" content="@yield('og_image', asset('images/icon.png'))">
 
     <!-- Twitter Card SEO -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', 'NTFC') | Nusantara Tax, Finance, and Consulting">
     <meta name="twitter:description" content="@yield('meta_description', 'Nusantara Tax, Finance, and Consulting (NTFC) - Mitrall Strategis Layanan Konsultasi Perpajakan, Manajemen Keuangan, Akuntansi, dan Audit Terpercaya di Indonesia.')">
-    <meta name="twitter:image" content="@yield('og_image', asset('images/logo biru.png'))">
+    <meta name="twitter:image" content="@yield('og_image', asset('images/icon.png'))">
 
     <!-- Structured Data JSON-LD (Schema.org for Google Rich Snippets) -->
     <script type="application/ld+json">
@@ -37,8 +37,8 @@
       "@@type": "AccountingService",
       "name": "Nusantara Tax, Finance, and Consulting (NTFC)",
       "url": "https://ntfconsulting.id",
-      "logo": "https://ntfconsulting.id/images/logo%20biru.png",
-      "image": "https://ntfconsulting.id/images/logo%20biru.png",
+      "logo": "https://ntfconsulting.id/images/icon.png",
+      "image": "https://ntfconsulting.id/images/icon.png",
       "description": "Layanan konsultasi perpajakan, manajemen keuangan, akuntansi, dan audit bisnis terpercaya di Indonesia.",
       "telephone": "{{ $siteSettings['site_phone'] ?? '+62 811-3058-8884' }}",
       "email": "{{ $siteSettings['site_email'] ?? 'contact@ntfconsulting.id' }}",
@@ -67,8 +67,10 @@
     </script>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ $siteSettings['site_favicon'] ?? asset('images/icon.png') }}">
-    <link rel="shortcut icon" href="{{ $siteSettings['site_favicon'] ?? asset('images/icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/icon.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('images/icon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/icon.png') }}">
 
     <!-- Preconnect for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
